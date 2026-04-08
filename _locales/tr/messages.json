@@ -1,0 +1,218 @@
+{
+    "extensionName": {
+        "message": "KOYU OKUYUCU"
+    },
+    "extensionDescription": {
+        "message": "Her siteye uygun koyu okuyucu. Gece ve gündüz için koyu renk kullanın."
+    },
+    "darkModeTitle": {
+        "message": "KOYU OKUYUCU"
+    },
+    "statusOn": {
+        "message": "Açık"
+    },
+    "statusOff": {
+        "message": "Kapalı"
+    },
+    "statusAuto": {
+        "message": "Otomatik"
+    },
+    "disableForSite": {
+        "message": "Şu site için devre dışı bırak"
+    },
+    "thisSite": {
+        "message": "bu site"
+    },
+    "thisPage": {
+        "message": "bu sayfa"
+    },
+    "tabVisuals": {
+        "message": "Görünüm"
+    },
+    "tabMedia": {
+        "message": "Medya"
+    },
+    "tabType": {
+        "message": "Yazı"
+    },
+    "tabAuto": {
+        "message": "Otomatik"
+    },
+    "tabSites": {
+        "message": "Siteler"
+    },
+    "tabKeys": {
+        "message": "Tuşlar"
+    },
+    "lblBrightness": {
+        "message": "Parlaklık: "
+    },
+    "lblContrast": {
+        "message": "Kontrast: "
+    },
+    "lblSepia": {
+        "message": "Sepya (Sıcaklık): "
+    },
+    "lblGrayscale": {
+        "message": "Gri Ton: "
+    },
+    "lblVisProtect": {
+        "message": "🎨 Görsel Koruma Modu"
+    },
+    "descVisProtect": {
+        "message": "Resim ve videolardaki orijinal renkleri korur. Renkleri tersine çevirmek yerine akıllıca karartır. <b>Fotoğraf ağırlıklı siteler için önerilir.</b>"
+    },
+    "lblSmartImages": {
+        "message": "Akıllı Görüntü Karartma"
+    },
+    "descSmartImages": {
+        "message": "Göz almasını azaltmak için resimleri soluklaştırır. <b>Üzerine gelerek</b> resmi aydınlatabilirsiniz!"
+    },
+    "lblDynamic": {
+        "message": "🤖 Dinamik Algılama"
+    },
+    "descDynamic": {
+        "message": "CSS değiştiğinde otomatik olarak uyum sağlar. <b>SPA'lar için (React, Vue, vb.) gereklidir.</b> Canlı stil güncellemelerini izler."
+    },
+    "lblPerformance": {
+        "message": "⚡ Performans Modu"
+    },
+    "descPerformance": {
+        "message": "Güç tüketimini azaltır ve pil ömrünü uzatır. En az DOM değişikliği için akıllı renk korumasını devre dışı bırakır. <b>Dizüstü bilgisayar kullanıcıları için önerilir.</b>"
+    },
+    "lblCustomFonts": {
+        "message": "Özel Yazı Tipi"
+    },
+    "lblFontFamily": {
+        "message": "Yazı Tipi Türü"
+    },
+    "optFontSystem": {
+        "message": "Sistem Varsayılanı"
+    },
+    "optFontSans": {
+        "message": "Sans Serif"
+    },
+    "optFontSerif": {
+        "message": "Serif"
+    },
+    "optFontMono": {
+        "message": "Eşaralıklı (Monospace)"
+    },
+    "optFontDyslexic": {
+        "message": "OpenDyslexic (Disleksi Dostu)"
+    },
+    "lblFontWeight": {
+        "message": "Yazı Kalınlığı: "
+    },
+    "lblActivationMode": {
+        "message": "Etkinleştirme Modu"
+    },
+    "optModeManual": {
+        "message": "Manuel (Tıklayarak)"
+    },
+    "optModeSystem": {
+        "message": "Sistem Görünümünü İzle"
+    },
+    "optModeTime": {
+        "message": "Zaman Çizelgesi"
+    },
+    "lblStartTime": {
+        "message": "Başlangıç Zamanı (Gün Batımı)"
+    },
+    "lblEndTime": {
+        "message": "Bitiş Zamanı (Gün Doğumu)"
+    },
+    "descAutoInfoManual": {
+        "message": "Karanlık Modun ne zaman otomatik açılacağını denetler."
+    },
+    "descAutoInfoSystem": {
+        "message": "Karanlık Mod, sisteminizin genel görünüm ayarlarına göre (açık/koyu) çalışır."
+    },
+    "descAutoInfoTime": {
+        "message": "Karanlık Mod belirlenen saat aralığında açılır/kapanır."
+    },
+    "subTabWhitelist": {
+        "message": "Yalnızca Liste"
+    },
+    "subTabBlacklist": {
+        "message": "Listeyi Hariç Tut"
+    },
+    "btnAdd": {
+        "message": "Ekle"
+    },
+    "lblCurrentSite": {
+        "message": "Geçerli: "
+    },
+    "btnAddCurrent": {
+        "message": "Geçerli Siteyi Ekle"
+    },
+    "lblEmptyList": {
+        "message": "Liste boş"
+    },
+    "lblHotkeySite": {
+        "message": "Site ekleme kısayolu: "
+    },
+    "lblToggleExt": {
+        "message": "Uzantıyı Aç/Kapat"
+    },
+    "lblAddRemoveSite": {
+        "message": "Geçerli Siteyi Ekle/Çıkar"
+    },
+    "descKeysInfo": {
+        "message": "Bir kutuya tıklayın ve kaydetmek için tuşlara basın."
+    },
+    "lblFooter": {
+        "message": "Değişiklikler otomatik kaydedilir"
+    },
+    "fontWeightNormal": {
+        "message": "Normal"
+    },
+    "fontWeightMedium": {
+        "message": "Orta"
+    },
+    "fontWeightBold": {
+        "message": "Kalın"
+    },
+    "shortcutNone": {
+        "message": "Yok"
+    },
+    "shortcutPressKeys": {
+        "message": "Tuşlara basın..."
+    },
+    "lblSettings": {
+        "message": "Ayarlar"
+    },
+    "lblAboutUs": {
+        "message": "Hakkımızda"
+    },
+    "lblLanguage": {
+        "message": "Dil"
+    },
+    "lblClose": {
+        "message": "Kapat"
+    },
+    "descAboutUs": {
+        "message": "KOYU OKUYUCU, iyi bir okuma deneyimi için tasarlanmış dinamik ve tam özellikli bir koyu durum eklentisidir."
+    },
+    "optLangSystem": {
+        "message": "Sistem Varsayılanı"
+    },
+    "optLangEn": {
+        "message": "English"
+    },
+    "optLangTr": {
+        "message": "Türkçe"
+    },
+    "optLangDe": {
+        "message": "Deutsch"
+    },
+    "optLangFr": {
+        "message": "Français"
+    },
+    "optLangJa": {
+        "message": "日本語"
+    },
+    "optLangRu": {
+        "message": "Русский"
+    }
+}

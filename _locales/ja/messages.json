@@ -1,0 +1,218 @@
+{
+  "extensionName": {
+    "message": "KOYU OKUYUCU"
+  },
+  "extensionDescription": {
+    "message": "暗い色はあらゆるウェブサイトに適しています。昼夜を問わず、暗い色を使用しましょう。"
+  },
+  "darkModeTitle": {
+    "message": "KOYU OKUYUCU"
+  },
+  "statusOn": {
+    "message": "オン"
+  },
+  "statusOff": {
+    "message": "オフ"
+  },
+  "statusAuto": {
+    "message": "自動"
+  },
+  "disableForSite": {
+    "message": "このサイトで無効にする"
+  },
+  "thisSite": {
+    "message": "このサイト"
+  },
+  "thisPage": {
+    "message": "このページ"
+  },
+  "tabVisuals": {
+    "message": "外観"
+  },
+  "tabMedia": {
+    "message": "メディア"
+  },
+  "tabType": {
+    "message": "フォント"
+  },
+  "tabAuto": {
+    "message": "自動"
+  },
+  "tabSites": {
+    "message": "サイト"
+  },
+  "tabKeys": {
+    "message": "キー"
+  },
+  "lblBrightness": {
+    "message": "明るさ: "
+  },
+  "lblContrast": {
+    "message": "コントラスト: "
+  },
+  "lblSepia": {
+    "message": "セピア: "
+  },
+  "lblGrayscale": {
+    "message": "グレースケール: "
+  },
+  "lblVisProtect": {
+    "message": "🎨 視覚保護モード"
+  },
+  "descVisProtect": {
+    "message": "画像本来の色を維持します。<b>写真が多いサイトにおすすめです。</b>"
+  },
+  "lblSmartImages": {
+    "message": "画像のスマート暗化"
+  },
+  "descSmartImages": {
+    "message": "画像のまぶしさを抑えます。<b>ホバーすると</b>明るくなります！"
+  },
+  "lblDynamic": {
+    "message": "🤖 ダイナミック検出"
+  },
+  "descDynamic": {
+    "message": "CSSの変更に自動適応。<b>SPA（React等）に必須です。</b>リアルタイムで監視。"
+  },
+  "lblPerformance": {
+    "message": "⚡ パフォーマンス"
+  },
+  "descPerformance": {
+    "message": "消費電力を抑え、バッテリー寿命を延ばします。<b>ノートPCユーザーにおすすめです。</b>"
+  },
+  "lblCustomFonts": {
+    "message": "カスタムフォント"
+  },
+  "lblFontFamily": {
+    "message": "フォントファミリ"
+  },
+  "optFontSystem": {
+    "message": "システムデフォルト"
+  },
+  "optFontSans": {
+    "message": "サンセリフ"
+  },
+  "optFontSerif": {
+    "message": "セリフ"
+  },
+  "optFontMono": {
+    "message": "等幅"
+  },
+  "optFontDyslexic": {
+    "message": "OpenDyslexic"
+  },
+  "lblFontWeight": {
+    "message": "フォントの太さ: "
+  },
+  "lblActivationMode": {
+    "message": "起動モード"
+  },
+  "optModeManual": {
+    "message": "手動"
+  },
+  "optModeSystem": {
+    "message": "システムに従う"
+  },
+  "optModeTime": {
+    "message": "時間指定"
+  },
+  "lblStartTime": {
+    "message": "開始時間"
+  },
+  "lblEndTime": {
+    "message": "終了時間"
+  },
+  "descAutoInfoManual": {
+    "message": "ダークモードの自動オン/オフを制御します。"
+  },
+  "descAutoInfoSystem": {
+    "message": "システムの設定に応じてダークモードが切り替わります。"
+  },
+  "descAutoInfoTime": {
+    "message": "指定したスケジュールに従って切り替わります。"
+  },
+  "subTabWhitelist": {
+    "message": "リストのみ反転"
+  },
+  "subTabBlacklist": {
+    "message": "リスト以外を反転"
+  },
+  "btnAdd": {
+    "message": "追加"
+  },
+  "lblCurrentSite": {
+    "message": "現在: "
+  },
+  "btnAddCurrent": {
+    "message": "今のサイトを追加"
+  },
+  "lblEmptyList": {
+    "message": "空のリスト"
+  },
+  "lblHotkeySite": {
+    "message": "サイト追加のショートカット: "
+  },
+  "lblToggleExt": {
+    "message": "拡張機能の切り替え"
+  },
+  "lblAddRemoveSite": {
+    "message": "現在のサイトを追加/削除"
+  },
+  "descKeysInfo": {
+    "message": "ボックスをクリックしてキーを押してください。"
+  },
+  "lblFooter": {
+    "message": "変更は自動保存されます"
+  },
+  "fontWeightNormal": {
+    "message": "標準"
+  },
+  "fontWeightMedium": {
+    "message": "中字"
+  },
+  "fontWeightBold": {
+    "message": "太字"
+  },
+  "shortcutNone": {
+    "message": "なし"
+  },
+  "shortcutPressKeys": {
+    "message": "キーを押す..."
+  },
+  "lblSettings": {
+    "message": "設定"
+  },
+  "lblAboutUs": {
+    "message": "私たちについて"
+  },
+  "lblLanguage": {
+    "message": "言語"
+  },
+  "lblClose": {
+    "message": "閉じる"
+  },
+  "descAboutUs": {
+    "message": "KOYU OKUYUCUは、プレミアムなブラウジング体験のために設計された、動的で高機能なダークモード拡張機能です。"
+  },
+  "optLangSystem": {
+    "message": "システムデフォルト"
+  },
+  "optLangEn": {
+    "message": "English"
+  },
+  "optLangTr": {
+    "message": "Türkçe"
+  },
+  "optLangDe": {
+    "message": "Deutsch"
+  },
+  "optLangFr": {
+    "message": "Français"
+  },
+  "optLangJa": {
+    "message": "日本語"
+  },
+  "optLangRu": {
+    "message": "Русский"
+  }
+}

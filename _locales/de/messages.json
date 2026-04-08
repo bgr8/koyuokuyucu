@@ -1,0 +1,218 @@
+{
+  "extensionName": {
+    "message": "KOYU OKUYUCU"
+  },
+  "extensionDescription": {
+    "message": "Dunkle Farben eignen sich für jede Website. Verwenden Sie dunkle Farben sowohl tagsüber als auch nachts."
+  },
+  "darkModeTitle": {
+    "message": "KOYU OKUYUCU"
+  },
+  "statusOn": {
+    "message": "An"
+  },
+  "statusOff": {
+    "message": "Aus"
+  },
+  "statusAuto": {
+    "message": "Auto"
+  },
+  "disableForSite": {
+    "message": "Für diese Seite deaktivieren"
+  },
+  "thisSite": {
+    "message": "diese Seite"
+  },
+  "thisPage": {
+    "message": "diese Seite"
+  },
+  "tabVisuals": {
+    "message": "Optik"
+  },
+  "tabMedia": {
+    "message": "Medien"
+  },
+  "tabType": {
+    "message": "Schrift"
+  },
+  "tabAuto": {
+    "message": "Auto"
+  },
+  "tabSites": {
+    "message": "Seiten"
+  },
+  "tabKeys": {
+    "message": "Tasten"
+  },
+  "lblBrightness": {
+    "message": "Helligkeit: "
+  },
+  "lblContrast": {
+    "message": "Kontrast: "
+  },
+  "lblSepia": {
+    "message": "Sepia (Wärme): "
+  },
+  "lblGrayscale": {
+    "message": "Grauton: "
+  },
+  "lblVisProtect": {
+    "message": "🎨 Visueller Schutz"
+  },
+  "descVisProtect": {
+    "message": "Bewahrt Originalfarben in Bildern und Videos durch intelligentes Abdunkeln. <b>Empfohlen für fotolastige Websites.</b>"
+  },
+  "lblSmartImages": {
+    "message": "Bilder abdunkeln"
+  },
+  "descSmartImages": {
+    "message": "Dunkelt Bilder ab, um Blendung zu reduzieren. <b>Mit der Maus darüberfahren</b>, um sie aufzuhellen!"
+  },
+  "lblDynamic": {
+    "message": "🤖 Dynamische Erkennung"
+  },
+  "descDynamic": {
+    "message": "Passt sich bei CSS-Änderungen automatisch an. <b>Wichtig für SPAs</b> (React, Vue). Überwacht Stiländerungen in Echtzeit."
+  },
+  "lblPerformance": {
+    "message": "⚡ Leistungsmodus"
+  },
+  "descPerformance": {
+    "message": "Reduziert den Stromverbrauch. Deaktiviert den intelligenten Farbschutz für minimale DOM-Änderungen. <b>Empfohlen für Laptops.</b>"
+  },
+  "lblCustomFonts": {
+    "message": "Eigene Schriftarten"
+  },
+  "lblFontFamily": {
+    "message": "Schriftart"
+  },
+  "optFontSystem": {
+    "message": "Systemstandard"
+  },
+  "optFontSans": {
+    "message": "Sans Serif"
+  },
+  "optFontSerif": {
+    "message": "Serif"
+  },
+  "optFontMono": {
+    "message": "Monospace"
+  },
+  "optFontDyslexic": {
+    "message": "OpenDyslexic"
+  },
+  "lblFontWeight": {
+    "message": "Schriftstärke: "
+  },
+  "lblActivationMode": {
+    "message": "Aktivierungsmodus"
+  },
+  "optModeManual": {
+    "message": "Manuell (Klick)"
+  },
+  "optModeSystem": {
+    "message": "Systemdesign folgen"
+  },
+  "optModeTime": {
+    "message": "Zeitplan"
+  },
+  "lblStartTime": {
+    "message": "Startzeit"
+  },
+  "lblEndTime": {
+    "message": "Endzeit"
+  },
+  "descAutoInfoManual": {
+    "message": "Steuert, wann der Dark Mode automatisch aktiviert wird."
+  },
+  "descAutoInfoSystem": {
+    "message": "Dark Mode wird von Ihren Systemdesign-Einstellungen gesteuert."
+  },
+  "descAutoInfoTime": {
+    "message": "Dark Mode schaltet sich anhand des obigen Zeitplans ein/aus."
+  },
+  "subTabWhitelist": {
+    "message": "Nur Liste umkehren"
+  },
+  "subTabBlacklist": {
+    "message": "Liste nicht umkehren"
+  },
+  "btnAdd": {
+    "message": "Hinzufügen"
+  },
+  "lblCurrentSite": {
+    "message": "Aktuell: "
+  },
+  "btnAddCurrent": {
+    "message": "Aktuelle Seite hinzufügen"
+  },
+  "lblEmptyList": {
+    "message": "Leere Liste"
+  },
+  "lblHotkeySite": {
+    "message": "Tastenkürzel für Seiten: "
+  },
+  "lblToggleExt": {
+    "message": "Erweiterung ein-/ausschalten"
+  },
+  "lblAddRemoveSite": {
+    "message": "Aktuelle Seite hinzufügen/entfernen"
+  },
+  "descKeysInfo": {
+    "message": "Klicken Sie auf ein Feld und drücken Sie Tasten."
+  },
+  "lblFooter": {
+    "message": "Änderungen werden automatisch gespeichert"
+  },
+  "fontWeightNormal": {
+    "message": "Normal"
+  },
+  "fontWeightMedium": {
+    "message": "Mittel"
+  },
+  "fontWeightBold": {
+    "message": "Fett"
+  },
+  "shortcutNone": {
+    "message": "Keine"
+  },
+  "shortcutPressKeys": {
+    "message": "Tasten drücken..."
+  },
+  "lblSettings": {
+    "message": "Einstellungen"
+  },
+  "lblAboutUs": {
+    "message": "Über uns"
+  },
+  "lblLanguage": {
+    "message": "Sprache"
+  },
+  "lblClose": {
+    "message": "Schließen"
+  },
+  "descAboutUs": {
+    "message": "Koyu Okuyucu ist eine dynamische, voll ausgestattete Dark-Mode-Erweiterung, die für ein erstklassiges Surferlebnis entwickelt wurde."
+  },
+  "optLangSystem": {
+    "message": "Systemstandard"
+  },
+  "optLangEn": {
+    "message": "English"
+  },
+  "optLangTr": {
+    "message": "Türkçe"
+  },
+  "optLangDe": {
+    "message": "Deutsch"
+  },
+  "optLangFr": {
+    "message": "Français"
+  },
+  "optLangJa": {
+    "message": "日本語"
+  },
+  "optLangRu": {
+    "message": "Русский"
+  }
+}

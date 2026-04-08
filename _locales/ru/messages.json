@@ -1,0 +1,218 @@
+{
+  "extensionName": {
+    "message": "KOYU OKUYUCU"
+  },
+  "extensionDescription": {
+    "message": "Темные цвета подходят для любого веб-сайта. Используйте темные цвета как днем, так и ночью."
+  },
+  "darkModeTitle": {
+    "message": "KOYU OKUYUCU"
+  },
+  "statusOn": {
+    "message": "Вкл"
+  },
+  "statusOff": {
+    "message": "Выкл"
+  },
+  "statusAuto": {
+    "message": "Авто"
+  },
+  "disableForSite": {
+    "message": "Отключить для сайта"
+  },
+  "thisSite": {
+    "message": "этот сайт"
+  },
+  "thisPage": {
+    "message": "эта страница"
+  },
+  "tabVisuals": {
+    "message": "Визуал"
+  },
+  "tabMedia": {
+    "message": "Медиа"
+  },
+  "tabType": {
+    "message": "Шрифт"
+  },
+  "tabAuto": {
+    "message": "Авто"
+  },
+  "tabSites": {
+    "message": "Сайты"
+  },
+  "tabKeys": {
+    "message": "Клавиши"
+  },
+  "lblBrightness": {
+    "message": "Яркость: "
+  },
+  "lblContrast": {
+    "message": "Контраст: "
+  },
+  "lblSepia": {
+    "message": "Сепия: "
+  },
+  "lblGrayscale": {
+    "message": "Оттенки серого: "
+  },
+  "lblVisProtect": {
+    "message": "🎨 Защита визуала"
+  },
+  "descVisProtect": {
+    "message": "Сохраняет исходные цвета изображений. <b>Рекомендуется для сайтов с фотографиями.</b>"
+  },
+  "lblSmartImages": {
+    "message": "Умное затемнение"
+  },
+  "descSmartImages": {
+    "message": "Затемняет изображения. <b>Наведите курсор</b>, чтобы осветлить!"
+  },
+  "lblDynamic": {
+    "message": "🤖 Динамика"
+  },
+  "descDynamic": {
+    "message": "Авто-отслеживание стилей. <b>Необходимо для SPA</b> (React, Vue)."
+  },
+  "lblPerformance": {
+    "message": "⚡ Производительность"
+  },
+  "descPerformance": {
+    "message": "Снижает энергопотребление. <b>Рекомендуется для ноутбуков.</b>"
+  },
+  "lblCustomFonts": {
+    "message": "Свой шрифт"
+  },
+  "lblFontFamily": {
+    "message": "Шрифт"
+  },
+  "optFontSystem": {
+    "message": "Системный"
+  },
+  "optFontSans": {
+    "message": "Без засечек (Sans)"
+  },
+  "optFontSerif": {
+    "message": "С засечками (Serif)"
+  },
+  "optFontMono": {
+    "message": "Моноширинный"
+  },
+  "optFontDyslexic": {
+    "message": "OpenDyslexic"
+  },
+  "lblFontWeight": {
+    "message": "Толщина шрифта: "
+  },
+  "lblActivationMode": {
+    "message": "Режим авто"
+  },
+  "optModeManual": {
+    "message": "Вручную"
+  },
+  "optModeSystem": {
+    "message": "Системная тема"
+  },
+  "optModeTime": {
+    "message": "Расписание"
+  },
+  "lblStartTime": {
+    "message": "Время начала"
+  },
+  "lblEndTime": {
+    "message": "Время конца"
+  },
+  "descAutoInfoManual": {
+    "message": "Управляет автоматическим включением темы."
+  },
+  "descAutoInfoSystem": {
+    "message": "Тема следует за системными настройками."
+  },
+  "descAutoInfoTime": {
+    "message": "Тема включается по расписанию."
+  },
+  "subTabWhitelist": {
+    "message": "Инверсия списка"
+  },
+  "subTabBlacklist": {
+    "message": "Не инвертировать"
+  },
+  "btnAdd": {
+    "message": "Добавить"
+  },
+  "lblCurrentSite": {
+    "message": "Текущий: "
+  },
+  "btnAddCurrent": {
+    "message": "Добавить текущий"
+  },
+  "lblEmptyList": {
+    "message": "Список пуст"
+  },
+  "lblHotkeySite": {
+    "message": "Хоткей для сайта: "
+  },
+  "lblToggleExt": {
+    "message": "Вкл/выкл расширение"
+  },
+  "lblAddRemoveSite": {
+    "message": "Добавить/удалить сайт"
+  },
+  "descKeysInfo": {
+    "message": "Кликните и нажмите клавиши."
+  },
+  "lblFooter": {
+    "message": "Авто-сохранение"
+  },
+  "fontWeightNormal": {
+    "message": "Нормальный"
+  },
+  "fontWeightMedium": {
+    "message": "Средний"
+  },
+  "fontWeightBold": {
+    "message": "Жирный"
+  },
+  "shortcutNone": {
+    "message": "Нет"
+  },
+  "shortcutPressKeys": {
+    "message": "Нажмите..."
+  },
+  "lblSettings": {
+    "message": "Настройки"
+  },
+  "lblAboutUs": {
+    "message": "О нас"
+  },
+  "lblLanguage": {
+    "message": "Язык"
+  },
+  "lblClose": {
+    "message": "Закрыть"
+  },
+  "descAboutUs": {
+    "message": "KOYU OKUYUCU — это динамичное полнофункциональное расширение темного режима, созданное для комфортного просмотра веб-страниц."
+  },
+  "optLangSystem": {
+    "message": "Системный по умолчанию"
+  },
+  "optLangEn": {
+    "message": "English"
+  },
+  "optLangTr": {
+    "message": "Türkçe"
+  },
+  "optLangDe": {
+    "message": "Deutsch"
+  },
+  "optLangFr": {
+    "message": "Français"
+  },
+  "optLangJa": {
+    "message": "日本語"
+  },
+  "optLangRu": {
+    "message": "Русский"
+  }
+}
