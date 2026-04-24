@@ -1,218 +1,221 @@
 {
-  "extensionName": {
-    "message": "KOYU OKUYUCU"
-  },
-  "extensionDescription": {
-    "message": "Les couleurs sombres conviennent à tous les sites web. Utilisez-les aussi bien le jour que la nuit."
-  },
-  "darkModeTitle": {
-    "message": "KOYU OKUYUCU"
-  },
-  "statusOn": {
-    "message": "Activé"
-  },
-  "statusOff": {
-    "message": "Désactivé"
-  },
-  "statusAuto": {
-    "message": "Auto"
-  },
-  "disableForSite": {
-    "message": "Désactiver pour ce site"
-  },
-  "thisSite": {
-    "message": "ce site"
-  },
-  "thisPage": {
-    "message": "cette page"
-  },
-  "tabVisuals": {
-    "message": "Visuels"
-  },
-  "tabMedia": {
-    "message": "Média"
-  },
-  "tabType": {
-    "message": "Police"
-  },
-  "tabAuto": {
-    "message": "Auto"
-  },
-  "tabSites": {
-    "message": "Sites"
-  },
-  "tabKeys": {
-    "message": "Touches"
-  },
-  "lblBrightness": {
-    "message": "Luminosité : "
-  },
-  "lblContrast": {
-    "message": "Contraste : "
-  },
-  "lblSepia": {
-    "message": "Sépia : "
-  },
-  "lblGrayscale": {
-    "message": "Niveaux de gris : "
-  },
-  "lblVisProtect": {
-    "message": "🎨 Protection visuelle"
-  },
-  "descVisProtect": {
-    "message": "Préserve les couleurs d'origine des images. <b>Recommandé pour les sites avec beaucoup de photos.</b>"
-  },
-  "lblSmartImages": {
-    "message": "Images Inteligentes"
-  },
-  "descSmartImages": {
-    "message": "Assombrit les images pour réduire l'éblouissement. <b>Survolez une image</b> pour l'éclaircir !"
-  },
-  "lblDynamic": {
-    "message": "🤖 Détection dynamique"
-  },
-  "descDynamic": {
-    "message": "S'adapte automatiquement. <b>Essentiel pour les SPA</b> (React, Vue). Surveille les mises à jour en temps réel."
-  },
-  "lblPerformance": {
-    "message": "⚡ Mode Performance"
-  },
-  "descPerformance": {
-    "message": "Réduit la consommation d'énergie. <b>Recommandé pour les ordinateurs portables.</b>"
-  },
-  "lblCustomFonts": {
-    "message": "Polices personnalisées"
-  },
-  "lblFontFamily": {
-    "message": "Police"
-  },
-  "optFontSystem": {
-    "message": "Par défaut"
-  },
-  "optFontSans": {
-    "message": "Sans Serif"
-  },
-  "optFontSerif": {
-    "message": "Serif"
-  },
-  "optFontMono": {
-    "message": "Monospace"
-  },
-  "optFontDyslexic": {
-    "message": "OpenDyslexic"
-  },
-  "lblFontWeight": {
-    "message": "Poids de la police : "
-  },
-  "lblActivationMode": {
-    "message": "Mode d'activation"
-  },
-  "optModeManual": {
-    "message": "Manuel"
-  },
-  "optModeSystem": {
-    "message": "Suivre le système"
-  },
-  "optModeTime": {
-    "message": "Planification"
-  },
-  "lblStartTime": {
-    "message": "Heure de début"
-  },
-  "lblEndTime": {
-    "message": "Heure de fin"
-  },
-  "descAutoInfoManual": {
-    "message": "Contrôle l'activation automatique du mode sombre."
-  },
-  "descAutoInfoSystem": {
-    "message": "Le mode sombre est contrôlé par votre système."
-  },
-  "descAutoInfoTime": {
-    "message": "Le mode sombre s'active selon la planification."
-  },
-  "subTabWhitelist": {
-    "message": "Inverser cette liste"
-  },
-  "subTabBlacklist": {
-    "message": "Ne pas inverser cette liste"
-  },
-  "btnAdd": {
-    "message": "Ajouter"
-  },
-  "lblCurrentSite": {
-    "message": "Actuel : "
-  },
-  "btnAddCurrent": {
-    "message": "Ajouter le site"
-  },
-  "lblEmptyList": {
-    "message": "Liste vide"
-  },
-  "lblHotkeySite": {
-    "message": "Raccourci : "
-  },
-  "lblToggleExt": {
-    "message": "Basculer l'extension"
-  },
-  "lblAddRemoveSite": {
-    "message": "Ajouter/Retirer le site"
-  },
-  "descKeysInfo": {
-    "message": "Cliquez et appuyez sur une touche."
-  },
-  "lblFooter": {
-    "message": "Sauvegarde automatique"
-  },
-  "fontWeightNormal": {
-    "message": "Normal"
-  },
-  "fontWeightMedium": {
-    "message": "Moyen"
-  },
-  "fontWeightBold": {
-    "message": "Gras"
-  },
-  "shortcutNone": {
-    "message": "Aucun"
-  },
-  "shortcutPressKeys": {
-    "message": "Appuyez..."
-  },
-  "lblSettings": {
-    "message": "Paramètres"
-  },
-  "lblAboutUs": {
-    "message": "À propos"
-  },
-  "lblLanguage": {
-    "message": "Langue"
-  },
-  "lblClose": {
-    "message": "Fermer"
-  },
-  "descAboutUs": {
-    "message": "KOYU OKUYUCU est une extension de mode sombre dynamique et complète conçue pour une expérience de navigation premium."
-  },
-  "optLangSystem": {
-    "message": "Défaut du système"
-  },
-  "optLangEn": {
-    "message": "English"
-  },
-  "optLangTr": {
-    "message": "Türkçe"
-  },
-  "optLangDe": {
-    "message": "Deutsch"
-  },
-  "optLangFr": {
-    "message": "Français"
-  },
-  "optLangJa": {
-    "message": "日本語"
-  },
-  "optLangRu": {
-    "message": "Русский"
-  }
+    "extensionName": {
+        "message": "KOYU OKUYUCU"
+    },
+    "extensionDescription": {
+        "message": "Les couleurs sombres conviennent à tous les sites web. Utilisez-les aussi bien le jour que la nuit."
+    },
+    "darkModeTitle": {
+        "message": "KOYU OKUYUCU"
+    },
+    "statusOn": {
+        "message": "Activé"
+    },
+    "statusOff": {
+        "message": "Désactivé"
+    },
+    "statusAuto": {
+        "message": "Auto"
+    },
+    "disableForSite": {
+        "message": "Désactiver pour ce site"
+    },
+    "thisSite": {
+        "message": "ce site"
+    },
+    "thisPage": {
+        "message": "cette page"
+    },
+    "tabVisuals": {
+        "message": "Visuels"
+    },
+    "tabMedia": {
+        "message": "Média"
+    },
+    "tabType": {
+        "message": "Police"
+    },
+    "tabAuto": {
+        "message": "Auto"
+    },
+    "tabSites": {
+        "message": "Sites"
+    },
+    "tabKeys": {
+        "message": "Touches"
+    },
+    "lblBrightness": {
+        "message": "Luminosité : "
+    },
+    "lblContrast": {
+        "message": "Contraste : "
+    },
+    "lblSepia": {
+        "message": "Sépia : "
+    },
+    "lblGrayscale": {
+        "message": "Niveaux de gris : "
+    },
+    "lblVisProtect": {
+        "message": "🎨 Protection visuelle"
+    },
+    "descVisProtect": {
+        "message": "Préserve les couleurs d'origine des images. <b>Recommandé pour les sites avec beaucoup de photos.</b>"
+    },
+    "lblSmartImages": {
+        "message": "Images Inteligentes"
+    },
+    "descSmartImages": {
+        "message": "Assombrit les images pour réduire l'éblouissement. <b>Survolez une image</b> pour l'éclaircir !"
+    },
+    "lblDynamic": {
+        "message": "🤖 Détection dynamique"
+    },
+    "descDynamic": {
+        "message": "S'adapte automatiquement. <b>Essentiel pour les SPA</b> (React, Vue). Surveille les mises à jour en temps réel."
+    },
+    "lblPerformance": {
+        "message": "⚡ Mode Performance"
+    },
+    "descPerformance": {
+        "message": "Réduit la consommation d'énergie. <b>Recommandé pour les ordinateurs portables.</b>"
+    },
+    "lblCustomFonts": {
+        "message": "Polices personnalisées"
+    },
+    "lblFontFamily": {
+        "message": "Police"
+    },
+    "optFontSystem": {
+        "message": "Par défaut"
+    },
+    "optFontSans": {
+        "message": "Sans Serif"
+    },
+    "optFontSerif": {
+        "message": "Serif"
+    },
+    "optFontMono": {
+        "message": "Monospace"
+    },
+    "optFontDyslexic": {
+        "message": "OpenDyslexic"
+    },
+    "lblFontWeight": {
+        "message": "Poids de la police : "
+    },
+    "lblActivationMode": {
+        "message": "Mode d'activation"
+    },
+    "optModeManual": {
+        "message": "Manuel"
+    },
+    "optModeSystem": {
+        "message": "Suivre le système"
+    },
+    "optModeTime": {
+        "message": "Planification"
+    },
+    "lblStartTime": {
+        "message": "Heure de début"
+    },
+    "lblEndTime": {
+        "message": "Heure de fin"
+    },
+    "descAutoInfoManual": {
+        "message": "Contrôle l'activation automatique du mode sombre."
+    },
+    "descAutoInfoSystem": {
+        "message": "Le mode sombre est contrôlé par votre système."
+    },
+    "descAutoInfoTime": {
+        "message": "Le mode sombre s'active selon la planification."
+    },
+    "subTabWhitelist": {
+        "message": "Inverser cette liste"
+    },
+    "subTabBlacklist": {
+        "message": "Ne pas inverser cette liste"
+    },
+    "btnAdd": {
+        "message": "Ajouter"
+    },
+    "lblCurrentSite": {
+        "message": "Actuel : "
+    },
+    "btnAddCurrent": {
+        "message": "Ajouter le site"
+    },
+    "lblEmptyList": {
+        "message": "Liste vide"
+    },
+    "lblHotkeySite": {
+        "message": "Raccourci : "
+    },
+    "lblToggleExt": {
+        "message": "Basculer l'extension"
+    },
+    "lblAddRemoveSite": {
+        "message": "Ajouter/Retirer le site"
+    },
+    "descKeysInfo": {
+        "message": "Cliquez et appuyez sur une touche."
+    },
+    "lblFooter": {
+        "message": "Sauvegarde automatique"
+    },
+    "fontWeightNormal": {
+        "message": "Normal"
+    },
+    "fontWeightMedium": {
+        "message": "Moyen"
+    },
+    "fontWeightBold": {
+        "message": "Gras"
+    },
+    "shortcutNone": {
+        "message": "Aucun"
+    },
+    "shortcutPressKeys": {
+        "message": "Appuyez..."
+    },
+    "lblSettings": {
+        "message": "Paramètres"
+    },
+    "lblAboutUs": {
+        "message": "À propos"
+    },
+    "lblLanguage": {
+        "message": "Langue"
+    },
+    "lblClose": {
+        "message": "Fermer"
+    },
+    "descAboutUs": {
+        "message": "KOYU OKUYUCU est une extension de mode sombre dynamique et complète conçue pour une expérience de navigation premium."
+    },
+    "optLangSystem": {
+        "message": "Défaut du système"
+    },
+    "optLangEn": {
+        "message": "English"
+    },
+    "optLangTr": {
+        "message": "Türkçe"
+    },
+    "optLangDe": {
+        "message": "Deutsch"
+    },
+    "optLangFr": {
+        "message": "Français"
+    },
+    "optLangJa": {
+        "message": "日本語"
+    },
+    "optLangRu": {
+        "message": "Русский"
+    },
+    "lblVersion": {
+        "message": "Version"
+    }
 }

@@ -66,6 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const settingsTabs = document.querySelectorAll('.settings-tab');
     const settingsPanels = document.querySelectorAll('.settings-panel');
     const languageSelect = document.getElementById('languageSelect');
+    const appVersion = document.getElementById('appVersion');
+
+    if (appVersion) {
+        appVersion.textContent = browser.runtime.getManifest().version;
+    }
 
     if(openSettingsBtn) {
         openSettingsBtn.addEventListener('click', () => {
