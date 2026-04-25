@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +39,7 @@
             border: 12px solid #000;
             border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             position: relative;
             background: #fff;
             transition: all 0.3s ease;
@@ -74,6 +75,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <label for="deviceSelect">Select Device Size:</label>
@@ -91,7 +93,7 @@
 
     <div class="device" id="deviceFrame">
         <!-- We use an iframe to load the actual popup in a restricted responsive context -->
-        <iframe src="popup.html"></iframe>
+        <iframe src="popupyeni.html"></iframe>
     </div>
 
     <div class="info">
@@ -105,7 +107,7 @@
             const dims = select.value.split('x');
             device.style.width = dims[0] + 'px';
             device.style.height = dims[1] + 'px';
-            
+
             // Adjust notch visibility based on device width (hide for extension max width)
             if (dims[0] === '600') {
                 device.style.borderWidth = '4px';
@@ -117,4 +119,5 @@
         }
     </script>
 </body>
+
 </html>
