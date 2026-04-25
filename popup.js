@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateAutoUI(s.automation.mode);
 
             if (s.automation.mode === 'manual') {
-                statusText.textContent = s.enabled ? browgetMessage("statusOn") : getMessage("statusOff");
+                statusText.textContent = s.enabled ? getMessage("statusOn") : getMessage("statusOff");
             } else {
                 statusText.textContent = getMessage("statusAuto");
             }
