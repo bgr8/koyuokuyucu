@@ -91,6 +91,7 @@
             text-align: center;
             padding: 14px 8px;
             font-size: 14px;
+            font-weight: 500;
             cursor: pointer;
             border-bottom: 2px solid transparent;
             color: var(--text-muted);
@@ -99,15 +100,13 @@
         }
 
         html[lang^="tr"] .tab {
-            font-size: 13px;
-            padding: 14px 4px;
-            min-width: 58px;
+            flex: 0 0 auto;
+            padding: 14px 10px;
         }
 
         .tab.active {
             border-bottom-color: var(--primary-color);
             color: var(--primary-color);
-            font-weight: 600;
         }
 
         .content {
@@ -346,6 +345,25 @@
         #addCurrentSite {
             padding: 6px 12px;
             font-size: 13px;
+        }
+
+        #media {
+            padding: 10px !important;
+        }
+
+        #media .row {
+            margin-bottom: 8px;
+            min-height: 24px;
+        }
+
+        #media p {
+            font-size: 10px;
+            line-height: 1.2;
+            margin: 4px 0;
+        }
+
+        #media hr {
+            margin: 8px 0;
         }
     </style>
 </head>
