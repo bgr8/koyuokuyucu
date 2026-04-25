@@ -31,6 +31,7 @@
             background: #1c1c1e;
             color: #fff;
             margin-left: 10px;
+            max-width: 300px;
         }
 
         .device {
@@ -80,19 +81,32 @@
     <div class="header">
         <label for="deviceSelect">Select Device Size:</label>
         <select id="deviceSelect" onchange="changeDevice()">
-            <option value="375x812">iPhone X/11/13 Mini (375x812)</option>
-            <option value="390x844">iPhone 12/13/14 (390x844)</option>
-            <option value="393x852">iPhone 14/15 Pro (393x852)</option>
-            <option value="428x926">iPhone Plus/Max (428x926)</option>
-            <option value="320x568">iPhone SE (320x568)</option>
-            <option value="360x800">Android Medium (360x800)</option>
-            <option value="412x915">Android Large (412x915)</option>
-            <option value="600x600">Extension Max Width (600x600)</option>
+            <optgroup label="iPhones">
+                <option value="320x568">iPhone SE (320x568)</option>
+                <option value="375x812">iPhone X/11/13 Mini (375x812)</option>
+                <option value="390x844">iPhone 12/13/14 (390x844)</option>
+                <option value="393x852">iPhone 14/15 Pro (393x852)</option>
+                <option value="430x932">iPhone 15 Pro Max/16 Pro (430x932)</option>
+                <option value="428x926">iPhone Plus/Max (428x926)</option>
+            </optgroup>
+            <optgroup label="Android">
+                <option value="360x780">Samsung S23/S24 (360x780)</option>
+                <option value="412x915">Android Large (412x915)</option>
+                <option value="412x920">Samsung S24 Ultra (412x920)</option>
+                <option value="448x1000">Pixel 8/9 Pro (448x1000)</option>
+            </optgroup>
+            <optgroup label="Foldables & Tablets">
+                <option value="300x700">Foldable Outer Screen (300x700)</option>
+                <option value="768x1024">iPad Mini (768x1024)</option>
+                <option value="820x1180">iPad Air/Pro (820x1180)</option>
+            </optgroup>
+            <optgroup label="Other">
+                <option value="600x600">Extension Max Width (600x600)</option>
+            </optgroup>
         </select>
     </div>
 
     <div class="device" id="deviceFrame">
-        <!-- We use an iframe to load the actual popup in a restricted responsive context -->
         <iframe src="popupyeni.html"></iframe>
     </div>
 
@@ -108,8 +122,9 @@
             device.style.width = dims[0] + 'px';
             device.style.height = dims[1] + 'px';
 
-            // Adjust notch visibility based on device width (hide for extension max width)
-            if (dims[0] === '600') {
+            // Adjust notch/frame style based on dimensions
+            // Tablets (width > 600) lose the phone notch effect for cleaner viewing
+            if (parseInt(dims[0]) > 600) {
                 device.style.borderWidth = '4px';
                 device.style.borderRadius = '8px';
             } else {

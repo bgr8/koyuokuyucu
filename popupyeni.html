@@ -366,8 +366,10 @@
             margin: 8px 0;
         }
 
-        @media screen and (max-width: 450px) {
+        @media screen and (max-width: 850px),
+        screen and (max-height: 450px) {
 
+            /* Keys sekmesini ve içeriğini tablet ve telefonlarda gizle */
             .tab[data-tab="keys"],
             #keys {
                 display: none !important;
