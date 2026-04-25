@@ -21,17 +21,29 @@
         .header {
             margin-bottom: 20px;
             text-align: center;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
         }
 
-        select {
+        select,
+        button {
             padding: 10px;
             font-size: 16px;
             border-radius: 8px;
             border: 1px solid #48484a;
             background: #1c1c1e;
             color: #fff;
-            margin-left: 10px;
-            max-width: 300px;
+        }
+
+        button {
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #3a3a3c;
         }
 
         .device {
@@ -46,8 +58,8 @@
             transition: all 0.3s ease;
         }
 
-        /* Notch simulation for visual realism */
-        .device::before {
+        /* Çentik (Notch) Stili */
+        .device.with-notch::before {
             content: '';
             position: absolute;
             top: 0;
@@ -79,52 +91,74 @@
 
 <body>
     <div class="header">
-        <label for="deviceSelect">Select Device Size:</label>
-        <select id="deviceSelect" onchange="changeDevice()">
+        <label for="deviceSelect">Cihaz Seç:</label>
+        <select id="deviceSelect" onchange="updateDevice()">
             <optgroup label="iPhones">
-                <option value="320x568">iPhone SE (320x568)</option>
-                <option value="375x812">iPhone X/11/13 Mini (375x812)</option>
-                <option value="390x844">iPhone 12/13/14 (390x844)</option>
-                <option value="393x852">iPhone 14/15 Pro (393x852)</option>
-                <option value="430x932">iPhone 15 Pro Max/16 Pro (430x932)</option>
-                <option value="428x926">iPhone Plus/Max (428x926)</option>
+                <option value="320x568" data-has-notch="false">iPhone SE (320x568)</option>
+                <option value="375x812" data-has-notch="true">iPhone X/11/13 Mini (375x812)</option>
+                <option value="390x844" data-has-notch="true">iPhone 12/13/14 (390x844)</option>
+                <option value="393x852" data-has-notch="true">iPhone 14/15 Pro (393x852)</option>
+                <option value="430x932" data-has-notch="true">iPhone 15 Pro Max/16 Pro (430x932)</option>
+                <option value="428x926" data-has-notch="true">iPhone Plus/Max (428x926)</option>
             </optgroup>
             <optgroup label="Android">
-                <option value="360x780">Samsung S23/S24 (360x780)</option>
-                <option value="412x915">Android Large (412x915)</option>
-                <option value="412x920">Samsung S24 Ultra (412x920)</option>
-                <option value="448x1000">Pixel 8/9 Pro (448x1000)</option>
+                <option value="360x780" data-has-notch="false">Samsung S23/S24 (360x780)</option>
+                <option value="412x915" data-has-notch="false">Android Large (412x915)</option>
+                <option value="412x920" data-has-notch="false">Samsung S24 Ultra (412x920)</option>
+                <option value="448x1000" data-has-notch="false">Pixel 8/9 Pro (448x1000)</option>
             </optgroup>
             <optgroup label="Foldables & Tablets">
-                <option value="300x700">Foldable Outer Screen (300x700)</option>
-                <option value="768x1024">iPad Mini (768x1024)</option>
-                <option value="820x1180">iPad Air/Pro (820x1180)</option>
+                <option value="300x700" data-has-notch="false">Foldable Outer (300x700)</option>
+                <option value="768x1024" data-has-notch="false">iPad Mini (768x1024)</option>
+                <option value="820x1180" data-has-notch="false">iPad Air/Pro (820x1180)</option>
             </optgroup>
             <optgroup label="Other">
-                <option value="600x600">Extension Max Width (600x600)</option>
+                <option value="600x600" data-has-notch="false">Extension Max Width (600x600)</option>
             </optgroup>
         </select>
+        <button onclick="rotateDevice()">🔄 Döndür</button>
     </div>
 
-    <div class="device" id="deviceFrame">
+    <div class="device with-notch" id="deviceFrame">
         <iframe src="popupyeni.html"></iframe>
     </div>
 
-    <div class="info">
-        <p>Testing popup.html responsive layout and touch targets.</p>
-    </div>
-
     <script>
-        function changeDevice() {
-            const select = document.getElementById('deviceSelect');
-            const device = document.getElementById('deviceFrame');
-            const dims = select.value.split('x');
-            device.style.width = dims[0] + 'px';
-            device.style.height = dims[1] + 'px';
+        // Cihazın mevcut çentik durumunu takip etmek için
+        let currentHasNotch = true;
 
-            // Adjust notch/frame style based on dimensions
-            // Tablets (width > 600) lose the phone notch effect for cleaner viewing
-            if (parseInt(dims[0]) > 600) {
+        function updateDevice() {
+            const select = document.getElementById('deviceSelect');
+            const selectedOption = select.options[select.selectedIndex];
+            const dims = selectedOption.value.split('x');
+            currentHasNotch = selectedOption.getAttribute('data-has-notch') === 'true';
+
+            applyDimensions(dims[0], dims[1], currentHasNotch);
+        }
+
+        function rotateDevice() {
+            const device = document.getElementById('deviceFrame');
+            const currentWidth = parseInt(window.getComputedStyle(device).width);
+            const currentHeight = parseInt(window.getComputedStyle(device).height);
+
+            // Boyutları ters çevir, çentik durumunu koru
+            applyDimensions(currentHeight, currentWidth, currentHasNotch);
+        }
+
+        function applyDimensions(width, height, hasNotch) {
+            const device = document.getElementById('deviceFrame');
+            device.style.width = width + 'px';
+            device.style.height = height + 'px';
+
+            // Notch yönetimi
+            if (hasNotch) {
+                device.classList.add('with-notch');
+            } else {
+                device.classList.remove('with-notch');
+            }
+
+            // Tabletlerde/Geniş ekranlarda border'ı incelt
+            if (parseInt(width) > 600 || parseInt(height) > 600) {
                 device.style.borderWidth = '4px';
                 device.style.borderRadius = '8px';
             } else {
