@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
         appVersion.textContent = browser.runtime.getManifest().version;
     }
 
-    if(openSettingsBtn) {
+    if (openSettingsBtn) {
         openSettingsBtn.addEventListener('click', () => {
             settingsOverlay.style.display = 'flex';
         });
     }
 
-    if(closeSettingsBtn) {
+    if (closeSettingsBtn) {
         closeSettingsBtn.addEventListener('click', () => {
             settingsOverlay.style.display = 'none';
         });
@@ -88,14 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener('click', () => {
             settingsTabs.forEach(t => t.classList.remove('active'));
             settingsPanels.forEach(p => p.style.display = 'none');
-            
+
             tab.classList.add('active');
             const target = tab.getAttribute('data-stabs');
             document.getElementById('panel-' + target).style.display = 'block';
         });
     });
 
-    if(languageSelect) {
+    if (languageSelect) {
         languageSelect.addEventListener('change', () => {
             if (currentSettings) {
                 currentSettings.language = languageSelect.value;
@@ -342,9 +342,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update labels
         if (currentSettings.automation.mode === 'manual') {
-            statusText.textContent = currentSettings.enabled ? browser.i18n.getMessage("statusOn") : browser.i18n.getMessage("statusOff");
+            statusText.textContent = currentSettings.enabled ? getMessage("statusOn") : getMessage("statusOff");
         } else {
-            statusText.textContent = browser.i18n.getMessage("statusAuto");
+            statusText.textContent = getMessage("statusAuto");
         }
 
         valBrightness.textContent = currentSettings.brightness;
@@ -439,9 +439,9 @@ document.addEventListener('DOMContentLoaded', () => {
             updateAutoUI(s.automation.mode);
 
             if (s.automation.mode === 'manual') {
-                statusText.textContent = s.enabled ? browser.i18n.getMessage("statusOn") : browser.i18n.getMessage("statusOff");
+                statusText.textContent = s.enabled ? browgetMessage("statusOn") : getMessage("statusOff");
             } else {
-                statusText.textContent = browser.i18n.getMessage("statusAuto");
+                statusText.textContent = getMessage("statusAuto");
             }
 
             // Shortcuts
