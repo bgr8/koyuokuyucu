@@ -8,7 +8,7 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             height: 100vh;
             margin: 0;
@@ -25,6 +25,12 @@
             gap: 10px;
             align-items: center;
             justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2c2c2e;
+            width: 100%;
+            padding: 5px 0;
         }
 
         select,
@@ -119,53 +125,68 @@
         <button onclick="rotateDevice()">🔄 Döndür</button>
     </div>
 
-    <div class="device with-notch" id="deviceFrame">
+    <div class="device" id="deviceFrame" style="width: 320x; height: 568px; border-width: 12px; border-radius: 40px;">
         <iframe src="popupyeni.html"></iframe>
     </div>
 
     <script>
         // Cihazın mevcut çentik durumunu takip etmek için
-        let currentHasNotch = true;
+        // Cihazın orijinal çentik bilgisini tutan değişken
+        // Global değişkenlerle mevcut boyutları takip edelim
+        let currentW = 320;
+        let currentH = 568;
+        let currentHasNotch = false;
 
         function updateDevice() {
             const select = document.getElementById('deviceSelect');
             const selectedOption = select.options[select.selectedIndex];
+
             const dims = selectedOption.value.split('x');
+            // Global değerleri güncelliyoruz
+            currentW = parseInt(dims[0]);
+            currentH = parseInt(dims[1]);
             currentHasNotch = selectedOption.getAttribute('data-has-notch') === 'true';
 
-            applyDimensions(dims[0], dims[1], currentHasNotch);
+            applyDimensions(currentW, currentH, currentHasNotch);
         }
 
         function rotateDevice() {
-            const device = document.getElementById('deviceFrame');
-            const currentWidth = parseInt(window.getComputedStyle(device).width);
-            const currentHeight = parseInt(window.getComputedStyle(device).height);
+            // Mevcut global genişlik ve yüksekliği takas et (Swap)
+            const temp = currentW;
+            currentW = currentH;
+            currentH = temp;
 
-            // Boyutları ters çevir, çentik durumunu koru
-            applyDimensions(currentHeight, currentWidth, currentHasNotch);
+            applyDimensions(currentW, currentH, currentHasNotch);
         }
 
         function applyDimensions(width, height, hasNotch) {
             const device = document.getElementById('deviceFrame');
+
+            // Stil değerlerini ata
             device.style.width = width + 'px';
             device.style.height = height + 'px';
 
-            // Notch yönetimi
-            if (hasNotch) {
+            const isLandscape = width > height;
+
+            // Çentik Yönetimi
+            if (hasNotch && !isLandscape) {
                 device.classList.add('with-notch');
             } else {
                 device.classList.remove('with-notch');
             }
 
-            // Tabletlerde/Geniş ekranlarda border'ı incelt
-            if (parseInt(width) > 600 || parseInt(height) > 600) {
-                device.style.borderWidth = '4px';
-                device.style.borderRadius = '8px';
+            // Çerçeve Kalınlığı Ayarı
+            // Not: width veya height'tan herhangi biri 768+ ise tablet modu gibi davranabilir
+            if (width >= 768 && height >= 600) {
+                device.style.borderWidth = '8px';
+                device.style.borderRadius = '20px';
             } else {
                 device.style.borderWidth = '12px';
                 device.style.borderRadius = '40px';
             }
         }
+
+        window.onload = updateDevice;
     </script>
 </body>
 
