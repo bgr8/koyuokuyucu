@@ -304,7 +304,7 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
         if (!style) {
             const s = document.createElement('style');
             s.id = STYLE_ID;
-            document.head.appendChild(s);
+            (document.head || document.documentElement).appendChild(s);
         }
         const styleEl = document.getElementById(STYLE_ID);
 
@@ -422,7 +422,7 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
             if (!document.getElementById(TYPO_ID)) {
                 const t = document.createElement('style');
                 t.id = TYPO_ID;
-                document.head.appendChild(t);
+                (document.head || document.documentElement).appendChild(t);
             }
             const typoEl = document.getElementById(TYPO_ID);
 
