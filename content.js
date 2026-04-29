@@ -32,6 +32,7 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
             const htmlBg = window.getComputedStyle(document.documentElement).backgroundColor;
 
             function getBrightness(color) {
+                if (!color) return 255;
                 const rgb = color.match(/\d+/g);
                 if (!rgb) return 255;
                 if (rgb.length >= 3) {
@@ -47,6 +48,53 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
                     brightness = 255;
                 }
             }
+
+            // Fast check for common dark mode data attributes and classes
+            const isDarkThemeTheme = document.documentElement.classList.contains('theme-dark') ||
+                document.body.classList.contains('theme-dark') ||
+                (document.body.getAttribute('data-theme') || '').toLowerCase().includes('dark') ||
+                (document.documentElement.getAttribute('data-theme') || '').toLowerCase().includes('dark');
+
+            if (isDarkThemeTheme) {
+                return true;
+            }
+
+            // For Gmail and Outlook, the background might be set on a specific container rather than body/html
+            const hostname = window.location.hostname;
+            if (hostname.includes('mail.google.com') || hostname.includes('outlook.com')) {
+                const containers = [
+                    document.querySelector('.nH'),
+                    document.querySelector('.wl'),
+                    document.getElementById('app'),
+                    document.getElementById('root'),
+                    document.getElementById('owa-root'),
+                    document.querySelector('.ms-Fabric'),
+                    document.querySelector('[data-app-section="MainContainer"]')
+                ];
+
+                // Also check large top-level divs that likely serve as app containers
+                if (document.body && document.body.children) {
+                    for (let i = 0; i < Math.min(10, document.body.children.length); i++) {
+                        const child = document.body.children[i];
+                        if (child.tagName === 'DIV' && child.clientHeight > window.innerHeight * 0.5) {
+                            containers.push(child);
+                        }
+                    }
+                }
+
+                for (const container of containers) {
+                    if (container) {
+                        const bg = window.getComputedStyle(container).backgroundColor;
+                        if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+                            const containerBrightness = getBrightness(bg);
+                            if (containerBrightness < 100) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
             return brightness < 100;
         } catch (e) {
             return false;
@@ -79,7 +127,8 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
         const whitelist = currentSettings.siteList ? currentSettings.siteList.whitelist : [];
 
         // Hardcoded domains that are known to have issues (like inverted colors on login)
-        const hardcodedBlacklist = ['mail.google.com', 'outlook.live.com', 'outlook.office.com', 'outlook.office365.com'];
+        // Gmail and Outlook are handled dynamically by isPageDark()
+        const hardcodedBlacklist = [];
         if (hardcodedBlacklist.some(d => domain.includes(d))) {
             return false;
         }
@@ -311,6 +360,15 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
         const url = window.location.href;
 
         // Visual Protection Mode: Different handling for media elements
+        let mediaSelector = 'img, video, iframe, canvas, :not(object):not(body) > embed, object, img[role="img"], .emoji, img[src*="emoji"], [aria-label*="emoji"]';
+        
+        // Google Docs specific overrides: 
+        // Docs uses canvas and iframes for its main document area, so we don't want to counter-invert them (we want them to become dark).
+        // Instead, we counter-invert SVG because Docs uses SVG for toolbar icons.
+        if (url.includes('docs.google.com')) {
+            mediaSelector = 'img, video, svg, :not(object):not(body) > embed, object, img[role="img"], .emoji, img[src*="emoji"], [aria-label*="emoji"]';
+        }
+
         let exceptionsSelector = '';
 
         if (currentSettings.visualProtection) {
@@ -318,11 +376,7 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
             exceptionsSelector = '[data-dm-protected="true"]';
         } else {
             // Default exceptions (images, videos, and dynamic protected elements)
-            exceptionsSelector = 'img, video, iframe, canvas, :not(object):not(body) > embed, object, img[role="img"], .emoji, img[src*="emoji"], [aria-label*="emoji"], [data-dm-protected="true"]';
-
-            if (url.includes('docs.google.com')) {
-                exceptionsSelector = 'img, video, iframe, svg, :not(object):not(body) > embed, object, img[role="img"], .emoji, img[src*="emoji"], [aria-label*="emoji"], [data-dm-protected="true"]';
-            }
+            exceptionsSelector = `${mediaSelector}, [data-dm-protected="true"]`;
         }
 
         const b = currentSettings.brightness;
@@ -341,7 +395,7 @@ globalThis.browser = globalThis.browser || globalThis.chrome;
         if (currentSettings.visualProtection) {
             // Smart darkening for media without color distortion
             mediaProtectionRules = `
-                img, video, iframe, canvas, :not(object):not(body) > embed, object, img[role="img"], .emoji, img[src*="emoji"], [aria-label*="emoji"] {
+                ${mediaSelector} {
                     filter: ${exceptionFilter} brightness(0.8) contrast(1.1) !important;
                 }
             `;
