@@ -31,7 +31,8 @@
         body {
             width: 100%;
             min-width: 320px;
-            max-width: 480px; /* Optional max-width for extension-like feel on desktop */
+            max-width: 480px;
+            /* Optional max-width for extension-like feel on desktop */
             margin: 0 auto;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -46,7 +47,7 @@
         }
 
         .header {
-            height: 64px;
+            height: 52px;
             padding: 0 16px;
             display: flex;
             align-items: center;
@@ -59,7 +60,7 @@
         }
 
         h1 {
-            font-size: clamp(20px, 5vw, 24px);
+            font-size: 20px;
             margin: 0;
             font-weight: 800;
             color: var(--accent-orange);
@@ -81,6 +82,9 @@
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
+            position: sticky;
+            top: 52px;
+            z-index: 10;
         }
 
         .tabs::-webkit-scrollbar {
@@ -90,8 +94,8 @@
         .tab {
             flex: 1 0 auto;
             text-align: center;
-            padding: 14px 12px;
-            font-size: 14px;
+            padding: 10px 8px;
+            font-size: 13px;
             cursor: pointer;
             border-bottom: 2px solid transparent;
             color: var(--text-muted);
@@ -106,14 +110,21 @@
         }
 
         .content {
-            padding: 16px;
+            padding: 12px;
             display: none;
             animation: fadeIn 0.2s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .content.active {
@@ -121,27 +132,27 @@
         }
 
         .control-group {
-            margin-bottom: 16px;
+            margin-bottom: 8px;
             background: var(--panel-bg);
-            padding: 16px;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 10px 12px;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         .control-group label {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 12px;
-            font-size: 14px;
+            margin-bottom: 6px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--text-color);
         }
 
         input[type="range"] {
             width: 100%;
-            margin: 8px 0;
-            height: 6px;
-            border-radius: 3px;
+            margin: 4px 0;
+            height: 4px;
+            border-radius: 2px;
             -webkit-appearance: none;
             background: var(--border-color);
             outline: none;
@@ -150,27 +161,27 @@
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background: var(--primary-color);
             cursor: pointer;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             background: var(--panel-bg);
-            padding: 14px 16px;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 10px 12px;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         .row span {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
         }
 
@@ -190,8 +201,8 @@
         .switch {
             position: relative;
             display: inline-block;
-            width: 50px;
-            height: 28px;
+            width: 44px;
+            height: 24px;
             flex-shrink: 0;
         }
 
@@ -210,20 +221,20 @@
             bottom: 0;
             background-color: var(--text-muted);
             transition: .3s;
-            border-radius: 34px;
+            border-radius: 24px;
         }
 
         .slider:before {
             position: absolute;
             content: "";
-            height: 24px;
-            width: 24px;
+            height: 20px;
+            width: 20px;
             left: 2px;
             bottom: 2px;
             background-color: white;
             transition: .3s;
             border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         input:checked+.slider {
@@ -231,7 +242,7 @@
         }
 
         input:checked+.slider:before {
-            transform: translateX(22px);
+            transform: translateX(20px);
         }
 
         .footer {
@@ -302,7 +313,8 @@
             cursor: pointer;
         }
 
-        input[type="text"], input[type="time"] {
+        input[type="text"],
+        input[type="time"] {
             padding: 10px 12px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -314,10 +326,10 @@
         }
 
         .hint-text {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
-            margin-top: 8px;
-            line-height: 1.4;
+            margin-top: 4px;
+            line-height: 1.3;
         }
 
         /* Settings Overlay */
@@ -330,60 +342,57 @@
             height: 100%;
             background: var(--bg-color);
             z-index: 100;
-            flex-direction: column;
+            flex-direction: row;
         }
 
         #settingsSidebar {
-            width: 100%;
+            width: 110px;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             background: var(--panel-bg);
-            border-bottom: 1px solid var(--border-color);
-            overflow-x: auto;
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
         }
 
         .settings-tab {
-            padding: 14px 16px;
-            font-size: 14px;
+            padding: 16px 12px;
+            font-size: 13px;
             cursor: pointer;
             color: var(--text-muted);
-            white-space: nowrap;
-            flex: 1 0 auto;
-            text-align: center;
+            white-space: normal;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            line-height: 1.3;
         }
 
         .settings-tab.active {
             color: var(--primary-color);
             font-weight: 600;
-            border-bottom: 2px solid var(--primary-color);
+            background: rgba(0, 122, 255, 0.05);
+            border-left: 3px solid var(--primary-color);
         }
 
         /* Desktop optimizations */
         @media (min-width: 480px) {
             body {
                 border-radius: 12px;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
+
             #settingsOverlay {
-                flex-direction: row;
                 border-radius: 12px;
             }
+
             #settingsSidebar {
                 width: 140px;
-                flex-direction: column;
-                border-right: 1px solid var(--border-color);
-                border-bottom: none;
             }
+
             .settings-tab {
-                border-bottom: 1px solid var(--border-color);
-                white-space: normal;
-                text-align: left;
-            }
-            .settings-tab.active {
-                border-bottom: 1px solid var(--border-color);
-                background: rgba(0, 122, 255, 0.05);
+                font-size: 14px;
+                padding: 18px 16px;
             }
         }
     </style>
@@ -394,7 +403,8 @@
     <div class="header">
         <h1 data-i18n="darkModeTitle">Dark Mode</h1>
         <div class="main-toggle">
-            <span id="statusText" data-i18n="statusOff" style="font-size: 14px; font-weight: 500; color: var(--text-muted);">Off</span>
+            <span id="statusText" data-i18n="statusOff"
+                style="font-size: 14px; font-weight: 500; color: var(--text-muted);">Off</span>
             <label class="switch">
                 <input type="checkbox" id="darkModeToggle">
                 <span class="slider"></span>
@@ -430,7 +440,7 @@
             <input type="range" id="grayscale" min="0" max="100" value="0">
         </div>
 
-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 16px 0;">
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 8px 0;">
 
         <div class="row">
             <span data-i18n="disableForSite">Disable for this site</span>
@@ -439,7 +449,8 @@
                 <span class="slider"></span>
             </label>
         </div>
-        <div style="font-size: 12px; color: var(--text-muted); text-align: right; margin-top: -8px;" id="siteDomain">...</div>
+        <div style="font-size: 12px; color: var(--text-muted); text-align: right; margin-top: -8px;" id="siteDomain">...
+        </div>
     </div>
 
     <!-- Media Tab -->
@@ -451,9 +462,10 @@
                 <span class="slider"></span>
             </label>
         </div>
-        <p data-i18n="descVisProtect" class="hint-text">Preserves original colors in images and videos. Uses smart darkening instead of color inversion. <b>Recommended for photo-heavy sites.</b></p>
+        <p data-i18n="descVisProtect" class="hint-text">Preserves original colors in images and videos. Uses smart
+            darkening instead of color inversion. <b>Recommended for photo-heavy sites.</b></p>
 
-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 16px 0;">
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 8px 0;">
 
         <div class="row">
             <span data-i18n="lblSmartImages">Smart Darkening</span>
@@ -462,9 +474,10 @@
                 <span class="slider"></span>
             </label>
         </div>
-        <p data-i18n="descSmartImages" class="hint-text">Dims images to reduce glare. <b>Hover over an image</b> to brighten it!</p>
+        <p data-i18n="descSmartImages" class="hint-text">Dims images to reduce glare. <b>Hover over an image</b> to
+            brighten it!</p>
 
-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 16px 0;">
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 8px 0;">
 
         <div class="row">
             <span data-i18n="lblDynamic">🤖 Dynamic Detection</span>
@@ -473,9 +486,10 @@
                 <span class="slider"></span>
             </label>
         </div>
-        <p data-i18n="descDynamic" class="hint-text">Automatically adapts when CSS changes. <b>Essential for SPAs</b> (React, Vue, Angular). Monitors style updates in real-time.</p>
+        <p data-i18n="descDynamic" class="hint-text">Automatically adapts when CSS changes. <b>Essential for SPAs</b>
+            (React, Vue, Angular). Monitors style updates in real-time.</p>
 
-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 16px 0;">
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 8px 0;">
 
         <div class="row">
             <span data-i18n="lblPerformance">⚡ Performance Mode</span>
@@ -484,7 +498,8 @@
                 <span class="slider"></span>
             </label>
         </div>
-        <p data-i18n="descPerformance" class="hint-text">Reduces power consumption and improves battery life. Disables smart color protection for minimal DOM changes. <b>Recommended for MacBook users.</b></p>
+        <p data-i18n="descPerformance" class="hint-text">Reduces power consumption and improves battery life. Disables
+            smart color protection for minimal DOM changes. <b>Recommended for MacBook users.</b></p>
     </div>
 
     <!-- Type Tab -->
@@ -543,7 +558,8 @@
 
     <!-- Sites Tab -->
     <div class="content" id="sites">
-        <div style="display: flex; background: var(--border-color); border-radius: 8px; margin-bottom: 16px; padding: 4px;">
+        <div
+            style="display: flex; background: var(--border-color); border-radius: 8px; margin-bottom: 16px; padding: 4px;">
             <div class="sub-tab" data-mode="whitelist" data-i18n="subTabWhitelist">Invert Listed Only</div>
             <div class="sub-tab active" data-mode="blacklist" data-i18n="subTabBlacklist">Not Invert Listed</div>
         </div>
@@ -554,16 +570,21 @@
         </div>
 
         <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 13px; font-weight: 500; color: var(--text-color);"><span data-i18n="lblCurrentSite">Current:</span> <span id="currentSiteName">...</span></span>
-            <button id="addCurrentSite" data-i18n="btnAddCurrent" style="padding: 6px 10px; font-size: 12px;">Add Current</button>
+            <span style="font-size: 13px; font-weight: 500; color: var(--text-color);"><span
+                    data-i18n="lblCurrentSite">Current:</span> <span id="currentSiteName">...</span></span>
+            <button id="addCurrentSite" data-i18n="btnAddCurrent" style="padding: 6px 10px; font-size: 12px;">Add
+                Current</button>
         </div>
 
-        <div id="siteListContainer" style="height: 150px; overflow-y: auto; border: 1px solid var(--border-color); background: var(--bg-color); border-radius: 8px; padding: 8px;">
-            <div style="padding: 10px; font-size: 13px; color: var(--text-muted); text-align: center;" data-i18n="lblEmptyList">Empty list</div>
+        <div id="siteListContainer"
+            style="height: 150px; overflow-y: auto; border: 1px solid var(--border-color); background: var(--bg-color); border-radius: 8px; padding: 8px;">
+            <div style="padding: 10px; font-size: 13px; color: var(--text-muted); text-align: center;"
+                data-i18n="lblEmptyList">Empty list</div>
         </div>
 
         <p class="hint-text" style="margin-top: 12px;">
-            <span data-i18n="lblHotkeySite">Hotkey for adding site:</span> <span id="addSiteHotkeyDisplay" style="font-weight: 600;">None</span>
+            <span data-i18n="lblHotkeySite">Hotkey for adding site:</span> <span id="addSiteHotkeyDisplay"
+                style="font-weight: 600;">None</span>
         </p>
     </div>
 
@@ -572,16 +593,20 @@
         <div class="control-group">
             <label data-i18n="lblToggleExt" style="display: block;">Toggle Extension</label>
             <div style="display: flex; gap: 10px;">
-                <input type="text" id="shortcutInput" value="None" readonly style="text-align: center; font-weight: 600;">
-                <button id="clearShortcut" style="padding: 0 16px; font-size: 20px; color: var(--text-muted);">&times;</button>
+                <input type="text" id="shortcutInput" value="None" readonly
+                    style="text-align: center; font-weight: 600;">
+                <button id="clearShortcut"
+                    style="padding: 0 16px; font-size: 20px; color: var(--text-muted);">&times;</button>
             </div>
         </div>
 
         <div class="control-group">
             <label data-i18n="lblAddRemoveSite" style="display: block;">Add/Remove Current Site</label>
             <div style="display: flex; gap: 10px;">
-                <input type="text" id="shortcutInputSite" value="None" readonly style="text-align: center; font-weight: 600;">
-                <button id="clearShortcutSite" style="padding: 0 16px; font-size: 20px; color: var(--text-muted);">&times;</button>
+                <input type="text" id="shortcutInputSite" value="None" readonly
+                    style="text-align: center; font-weight: 600;">
+                <button id="clearShortcutSite"
+                    style="padding: 0 16px; font-size: 20px; color: var(--text-muted);">&times;</button>
             </div>
         </div>
 
@@ -592,7 +617,9 @@
 
     <div class="footer">
         <span data-i18n="lblFooter">Changes auto-save</span>
-        <button id="openSettingsBtn" style="background: none; border: none; font-size: 20px; cursor: pointer; padding: 4px; display: flex; align-items: center;" title="Settings">⚙️</button>
+        <button id="openSettingsBtn"
+            style="background: none; border: none; font-size: 20px; cursor: pointer; padding: 4px; display: flex; align-items: center;"
+            title="Settings">⚙️</button>
     </div>
 
     <!-- Settings Overlay -->
@@ -607,21 +634,29 @@
         <div style="flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2 style="margin: 0; font-size: 18px;" data-i18n="lblSettings">Settings</h2>
-                <button id="closeSettingsBtn" data-i18n="lblClose" style="background: var(--primary-color); color: white; border: none;">Close</button>
+                <button id="closeSettingsBtn" data-i18n="lblClose"
+                    style="background: var(--primary-color); color: white; border: none;">Close</button>
             </div>
-            
+
             <!-- About Us Panel -->
             <div id="panel-about" class="settings-panel active" style="display: block; flex: 1;">
                 <div style="text-align: center; margin-bottom: 20px; margin-top: 20px;">
-                    <img src="icons/icon.png" alt="Extension Icon" style="width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <h2 data-i18n="extensionName" style="margin: 16px 0 8px 0; font-size: 20px;">Universal Dark Mode</h2>
-                    <div style="font-size: 13px; color: var(--text-muted);"><span data-i18n="lblVersion">Version</span> <span id="appVersion">1.0.0</span></div>
+                    <img src="icons/icon.png" alt="Extension Icon"
+                        style="width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <h2 data-i18n="extensionName" style="margin: 16px 0 8px 0; font-size: 20px;">Universal Dark Mode
+                    </h2>
+                    <div style="font-size: 13px; color: var(--text-muted);"><span data-i18n="lblVersion">Version</span>
+                        <span id="appVersion">1.0.0</span>
+                    </div>
                 </div>
-                <p data-i18n="descAboutUs" style="font-size: 14px; line-height: 1.6; color: var(--text-color); text-align: center; max-width: 400px; margin: 0 auto;">...</p>
+                <p data-i18n="descAboutUs"
+                    style="font-size: 14px; line-height: 1.6; color: var(--text-color); text-align: center; max-width: 400px; margin: 0 auto;">
+                    ...</p>
             </div>
             <!-- Language Panel -->
             <div id="panel-language" class="settings-panel" style="display: none; flex: 1;">
-                <label data-i18n="lblLanguage" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 12px;">Language</label>
+                <label data-i18n="lblLanguage"
+                    style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 12px;">Language</label>
                 <select id="languageSelect" style="width: 100%; padding: 12px; font-size: 14px; margin-bottom: 24px;">
                     <option value="system" data-i18n="optLangSystem">System Default</option>
                     <option value="en" data-i18n="optLangEn">English</option>
