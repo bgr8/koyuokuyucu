@@ -1,4 +1,23 @@
-globalThis.browser = globalThis.browser || globalThis.chrome;
+globalThis.browser = globalThis.browser || globalThis.chrome || {};
+
+// Polyfill for standalone testing (e.g., in popup-mobile.html or mobile simulators)
+if (!browser.i18n) {
+    browser.i18n = { getUILanguage: () => 'en', getMessage: (key) => '' };
+}
+if (!browser.runtime) {
+    browser.runtime = { getManifest: () => ({ version: '1.0.0-test' }), getURL: (path) => path, lastError: null };
+}
+if (!browser.storage) {
+    browser.storage = {
+        local: { get: (keys, cb) => cb && cb({}), set: (data, cb) => cb && cb() }
+    };
+}
+if (!browser.tabs) {
+    browser.tabs = {
+        query: (q, cb) => cb && cb([{ id: 1, url: 'https://example.com' }]),
+        sendMessage: (id, msg, cb) => cb && cb()
+    };
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.lang = browser.i18n.getUILanguage() || 'en';
@@ -54,6 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tabs
     const tabs = document.querySelectorAll('.tab');
     const contents = document.querySelectorAll('.content');
+
+    // Detect mobile devices and local iframe tester to hide Keys tab
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.self !== window.top);
+    if (isMobile) {
+        const keysTabBtn = document.querySelector('.tab[data-tab="keys"]');
+        if (keysTabBtn) keysTabBtn.style.display = 'none';
+    }
 
     let currentHostname = '';
     let currentSettings = null;
