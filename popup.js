@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const list = mode === 'blacklist' ? currentSettings.siteList.blacklist : currentSettings.siteList.whitelist;
 
         if (!list || list.length === 0) {
-            siteListContainer.innerHTML = '<div data-i18n="lblEmptyList" style="padding: 5px; font-size: 12px; color: #86868b; text-align: center;">Empty list</div>';
+            siteListContainer.innerHTML = '<div data-i18n="lblEmptyList" style="padding: 5px; font-size: 12px; color: #86868b; text-align: center;">🚫 ' + getMessage("lblEmptyList") + '</div>';
             return;
         }
 
