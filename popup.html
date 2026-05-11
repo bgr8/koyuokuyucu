@@ -151,11 +151,11 @@
         input[type="range"] {
             width: 100%;
             margin: 4px 0;
-            height: 4px;
+            height: 6px;
             border-radius: 2px;
-            -webkit-appearance: none;
             background: var(--border-color);
             outline: none;
+            accent-color: var(--primary-color);
         }
 
         input[type="range"]::-webkit-slider-thumb {
@@ -166,7 +166,8 @@
             border-radius: 50%;
             background: var(--primary-color);
             cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffffff;
         }
 
         .row {
@@ -332,7 +333,14 @@
             line-height: 1.3;
         }
 
-        /* Settings Overlay */
+        /* Stabilize body when settings open */
+        body.settings-open {
+            height: 520px;
+            /* Fixed height for the popup when settings are open */
+            overflow: hidden;
+        }
+
+        /* Settings Overlay Redesign */
         #settingsOverlay {
             display: none;
             position: fixed;
@@ -340,59 +348,198 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--bg-color);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 100;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.2s ease;
+        }
+
+        .settings-card {
+            width: 92%;
+            max-width: 440px;
+            height: 480px;
+            /* Increased to fit more content without scrolling */
+            background: var(--panel-bg);
+            display: flex;
             flex-direction: row;
+            border-radius: 28px;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            animation: cardAppear 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @supports (backdrop-filter: blur(20px)) {
+            .settings-card {
+                background: rgba(var(--overlay-bg-rgb, 255, 255, 255), 0.8);
+                backdrop-filter: blur(25px);
+            }
+
+            @media (prefers-color-scheme: dark) {
+                .settings-card {
+                    background: rgba(28, 28, 30, 0.8);
+                }
+            }
         }
 
         #settingsSidebar {
-            width: 110px;
+            width: 90px;
             display: flex;
             flex-direction: column;
-            background: var(--panel-bg);
+            background: rgba(0, 0, 0, 0.04);
             border-right: 1px solid var(--border-color);
-            overflow-y: auto;
+            padding-top: 24px;
+            flex-shrink: 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            #settingsSidebar {
+                background: rgba(255, 255, 255, 0.04);
+            }
         }
 
         .settings-tab {
-            padding: 16px 12px;
-            font-size: 13px;
+            padding: 12px 8px;
+            font-size: 11px;
             cursor: pointer;
             color: var(--text-muted);
-            white-space: normal;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.2s ease;
-            line-height: 1.3;
+            text-align: center;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            margin: 4px 8px;
+            border-radius: 14px;
+        }
+
+        .settings-tab span:first-child {
+            font-size: 22px;
+            margin-bottom: 2px;
+            transition: transform 0.2s;
+        }
+
+        .settings-tab:hover span:first-child {
+            transform: scale(1.1);
         }
 
         .settings-tab.active {
             color: var(--primary-color);
+            background: rgba(0, 122, 255, 0.12);
             font-weight: 600;
-            background: rgba(0, 122, 255, 0.05);
-            border-left: 3px solid var(--primary-color);
+        }
+
+        .settings-content {
+            flex: 1;
+            padding: 20px;
+            /* Reduced from 24px to save space */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            /* Content area is fixed, panels will scroll */
+        }
+
+        .settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            /* Reduced from 24px to save space */
+            flex-shrink: 0;
+        }
+
+        .settings-header h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .close-overlay {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            border: none;
+            background: var(--border-color);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .close-overlay:hover {
+            background: var(--danger-color);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .settings-panel {
+            display: none;
+            flex-direction: column;
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 4px;
+            animation: panelSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .settings-panel.active {
+            display: flex;
+        }
+
+        @keyframes panelSlide {
+            from {
+                opacity: 0;
+                transform: translateX(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Premium scrollbar for panels */
+        .settings-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .settings-panel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .settings-panel::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 2px;
         }
 
         /* Desktop optimizations */
         @media (min-width: 480px) {
-            body {
-                border-radius: 12px;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-
-            #settingsOverlay {
-                border-radius: 12px;
-            }
-
             #settingsSidebar {
-                width: 140px;
+                width: 120px;
             }
 
             .settings-tab {
-                font-size: 14px;
-                padding: 18px 16px;
+                font-size: 13px;
+                padding: 14px 10px;
             }
         }
     </style>
@@ -624,48 +771,66 @@
 
     <!-- Settings Overlay -->
     <div id="settingsOverlay">
-        <!-- Sidebar -->
-        <div id="settingsSidebar">
-            <div class="settings-tab active" data-stabs="about" data-i18n="lblAboutUs">About Us</div>
-            <div class="settings-tab" data-stabs="language" data-i18n="lblLanguage">Language</div>
-            <div style="flex: 1;"></div>
-        </div>
-        <!-- Content -->
-        <div style="flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2 style="margin: 0; font-size: 18px;" data-i18n="lblSettings">Settings</h2>
-                <button id="closeSettingsBtn" data-i18n="lblClose"
-                    style="background: var(--primary-color); color: white; border: none;">Close</button>
+        <div class="settings-card">
+            <!-- Sidebar -->
+            <div id="settingsSidebar">
+                <div class="settings-tab active" data-stabs="about">
+                    <span>ℹ</span>
+                    <span data-i18n="lblAboutUs">About</span>
+                </div>
+                <div class="settings-tab" data-stabs="language">
+                    <span>🌐</span>
+                    <span data-i18n="lblLanguage">Language</span>
+                </div>
+                <div style="flex: 1;"></div>
             </div>
 
-            <!-- About Us Panel -->
-            <div id="panel-about" class="settings-panel active" style="display: block; flex: 1;">
-                <div style="text-align: center; margin-bottom: 20px; margin-top: 20px;">
-                    <img src="icons/icon.png" alt="Extension Icon"
-                        style="width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <h2 data-i18n="extensionName" style="margin: 16px 0 8px 0; font-size: 20px;">Universal Dark Mode
-                    </h2>
-                    <div style="font-size: 13px; color: var(--text-muted);"><span data-i18n="lblVersion">Version</span>
-                        <span id="appVersion">1.0.0</span>
+            <!-- Main Content Area -->
+            <div class="settings-content">
+                <div class="settings-header">
+                    <h2 data-i18n="lblSettings">Settings</h2>
+                    <button id="closeSettingsBtn" class="close-overlay" aria-label="Close">&times;</button>
+                </div>
+
+                <!-- About Us Panel -->
+                <div id="panel-about" class="settings-panel active">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <div
+                            style="background: linear-gradient(135deg, var(--accent-orange), #ffcc00); width: 64px; height: 64px; border-radius: 18px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(255, 149, 0, 0.25);">
+                            <img src="icons/icon.png" alt="Icon" style="width: 40px; height: 40px; border-radius: 8px;">
+                        </div>
+                        <h3 data-i18n="extensionName"
+                            style="margin: 0 0 2px 0; font-size: 20px; font-weight: 800; letter-spacing: -0.5px;">
+                            Universal Dark Mode</h3>
+                        <div style="font-size: 12px; color: var(--text-muted);">
+                            <span data-i18n="lblVersion">Version</span> <span id="appVersion">1.0.0</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: rgba(0,0,0,0.03); border-radius: 14px; padding: 14px; line-height: 1.5; font-size: 13px; color: var(--text-color);">
+                        <p data-i18n="descAboutUs" style="margin: 0;">Experience the web in a new light. Universal Dark
+                            Mode provides a smart, eye-friendly browsing experience across all websites.</p>
                     </div>
                 </div>
-                <p data-i18n="descAboutUs"
-                    style="font-size: 14px; line-height: 1.6; color: var(--text-color); text-align: center; max-width: 400px; margin: 0 auto;">
-                    ...</p>
-            </div>
-            <!-- Language Panel -->
-            <div id="panel-language" class="settings-panel" style="display: none; flex: 1;">
-                <label data-i18n="lblLanguage"
-                    style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 12px;">Language</label>
-                <select id="languageSelect" style="width: 100%; padding: 12px; font-size: 14px; margin-bottom: 24px;">
-                    <option value="system" data-i18n="optLangSystem">System Default</option>
-                    <option value="en" data-i18n="optLangEn">English</option>
-                    <option value="tr" data-i18n="optLangTr">Türkçe</option>
-                    <option value="de" data-i18n="optLangDe">Deutsch</option>
-                    <option value="fr" data-i18n="optLangFr">Français</option>
-                    <option value="ja" data-i18n="optLangJa">日本語</option>
-                    <option value="ru" data-i18n="optLangRu">Русский</option>
-                </select>
+
+                <!-- Language Panel -->
+                <div id="panel-language" class="settings-panel">
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;" data-i18n="descLanguage">
+                        Choose your preferred language for the extension interface.</p>
+
+                    <div class="control-group"
+                        style="box-shadow: none; border: 1px solid var(--border-color); padding: 4px;">
+                        <select id="languageSelect" style="border: none; background: transparent;">
+                            <option value="system" data-i18n="optLangSystem">System Default</option>
+                            <option value="en" data-i18n="optLangEn">English</option>
+                            <option value="tr" data-i18n="optLangTr">Türkçe</option>
+                            <option value="de" data-i18n="optLangDe">Deutsch</option>
+                            <option value="fr" data-i18n="optLangFr">Français</option>
+                            <option value="ja" data-i18n="optLangJa">日本語</option>
+                            <option value="ru" data-i18n="optLangRu">Русский</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

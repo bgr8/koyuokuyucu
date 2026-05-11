@@ -101,23 +101,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openSettingsBtn) {
         openSettingsBtn.addEventListener('click', () => {
             settingsOverlay.style.display = 'flex';
+            document.body.classList.add('settings-open');
         });
     }
 
     if (closeSettingsBtn) {
         closeSettingsBtn.addEventListener('click', () => {
             settingsOverlay.style.display = 'none';
+            document.body.classList.remove('settings-open');
         });
     }
 
     settingsTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             settingsTabs.forEach(t => t.classList.remove('active'));
-            settingsPanels.forEach(p => p.style.display = 'none');
+            settingsPanels.forEach(p => p.classList.remove('active'));
 
             tab.classList.add('active');
             const target = tab.getAttribute('data-stabs');
-            document.getElementById('panel-' + target).style.display = 'block';
+            const panel = document.getElementById('panel-' + target);
+            if (panel) panel.classList.add('active');
         });
     });
 
