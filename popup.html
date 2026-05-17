@@ -112,6 +112,7 @@
             padding: 12px;
             display: none;
             animation: fadeIn 0.2s ease;
+            overflow: hidden !important;
         }
 
         @keyframes fadeIn {
@@ -334,9 +335,9 @@
 
         /* Stabilize body when settings open */
         body.settings-open {
-            height: 520px;
-            /* Fixed height for the popup when settings are open */
-            overflow: hidden;
+            height: 520px !important;
+            max-height: 520px !important;
+            overflow: hidden !important;
         }
 
         /* Settings Overlay Redesign */
@@ -540,6 +541,30 @@
                 font-size: 13px;
                 padding: 14px 10px;
             }
+        }
+
+        /* Media sekmesinin içeriğini scrollbar olmadan ekrana sığdırmak için optimizasyon */
+        #media .row {
+            margin-bottom: 6px;
+            /* Satırlar arası boşluğu azalttık (8px -> 6px) */
+            padding: 8px 12px;
+            /* İç boşluğu daralttık (10px -> 8px) */
+        }
+
+        #media p.hint-text {
+            margin-top: 2px;
+            /* Yazıların üst boşluğunu sıfırladık */
+            margin-bottom: 6px;
+            /* Yazıların alt boşluğunu sabitledik */
+            line-height: 1.2;
+            /* Satır aralığını daralttık */
+            font-size: 11px;
+            /* Okunabilirliği bozmadan fontu sabitledik */
+        }
+
+        #media hr {
+            margin: 6px 0 !important;
+            /* Çizgilerin yarattığı boşluğu daralttık (8px -> 6px) */
         }
     </style>
 </head>
